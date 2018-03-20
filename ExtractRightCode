@@ -1,0 +1,19 @@
+import os
+import re
+
+
+def extractRightCode(path):
+    files = os.listdir(path)
+    print(files)
+    rightCode=[]
+    for name in files:
+        rightCode.append(re.split('-',name)[0])
+    print(rightCode)
+    f=open('RightCode.txt','w')
+    for realCode in rightCode:
+        f.write(realCode+'\n')
+    return rightCode
+
+
+if __name__ == '__main__':
+    extractRightCode('Img')
